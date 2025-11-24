@@ -1,0 +1,33 @@
+<section class="our-story">
+  <div class="container">
+    <div class="story-header">
+      <h2 class="section-title">Our Story</h2>
+      <h3 class="story-main-title">Our Founders Met with an Accident</h3>
+      <p class="story-subtitle">But the good kind!</p>
+    </div>
+
+    <div class="story-timeline">
+      <div *ngFor="let part of storyParts; let i = index"
+           class="story-card"
+           [class.left]="i % 2 === 0"
+           [class.right]="i % 2 !== 0">
+        <div class="card-content">
+          <div class="story-icon">{{ part.icon }}</div>
+          <h4 class="story-title">{{ part.title }}</h4>
+          <p class="story-subtitle-text">{{ part.subtitle }}</p>
+          <p class="story-description">{{ part.description }}</p>
+        </div>
+        <div class="timeline-dot"></div>
+      </div>
+    </div>
+
+    <div class="story-footer">
+      <p class="footer-text">
+        And just like that, heartbreak, design flair, TED-Talk confidence and marketing prowess
+        came together to create and innovate your dream, your business.
+      </p>
+      <p class="footer-signature">Welcome to our story</p>
+      <p class="footer-tagline">A startup built on missed dates, good looks, and questionable confidence</p>
+    </div>
+  </div>
+</section>

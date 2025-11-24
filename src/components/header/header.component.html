@@ -1,0 +1,25 @@
+<header class="header" [class.animation-complete]="animationComplete">
+  <div class="header-content">
+    <div class="logo-container">
+      <div class="logo-animation" *ngIf="!animationComplete">
+        <div class="logo-letter o">O</div>
+        <div class="logo-separator">&</div>
+        <div class="logo-letter c">C</div>
+      </div>
+      <div class="logo-text" *ngIf="animationComplete">
+        <span class="oak">Oak</span>
+        <span class="ampersand">&</span>
+        <span class="code">Code</span>
+      </div>
+    </div>
+
+    <nav class="nav-menu">
+      <a href="#" class="nav-link">Services</a>
+      <a href="#" class="nav-link">Work</a>
+      <a href="#" class="nav-link">About</a>
+      <a href="#" class="nav-link">Contact</a>
+    </nav>
+  </div>
+
+  <div class="header-line"></div>
+</header>

@@ -1,0 +1,46 @@
+<section class="testimonials">
+  <div class="container">
+    <div class="section-header">
+      <h2 class="section-title">What Our Clients Say</h2>
+      <p class="section-subtitle">Real stories from real partnerships</p>
+    </div>
+
+    <div class="testimonials-carousel">
+      <div class="carousel-container">
+        <button class="nav-button prev" (click)="previous()">
+          <span>←</span>
+        </button>
+
+        <div class="testimonial-wrapper">
+          <div *ngFor="let testimonial of testimonials; let i = index"
+               class="testimonial-card"
+               [class.active]="i === currentIndex"
+               [class.prev]="i === currentIndex - 1 || (currentIndex === 0 && i === testimonials.length - 1)"
+               [class.next]="i === currentIndex + 1 || (currentIndex === testimonials.length - 1 && i === 0)">
+            <div class="quote-icon">"</div>
+            <p class="testimonial-quote">{{ testimonial.quote }}</p>
+            <div class="testimonial-author">
+              <div class="author-avatar">{{ testimonial.avatar }}</div>
+              <div class="author-info">
+                <h4 class="author-name">{{ testimonial.name }}</h4>
+                <p class="author-position">{{ testimonial.position }}, {{ testimonial.company }}</p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <button class="nav-button next" (click)="next()">
+          <span>→</span>
+        </button>
+      </div>
+
+      <div class="carousel-dots">
+        <button *ngFor="let testimonial of testimonials; let i = index"
+                class="dot"
+                [class.active]="i === currentIndex"
+                (click)="goToSlide(i)">
+        </button>
+      </div>
+    </div>
+  </div>
+</section>

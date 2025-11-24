@@ -1,0 +1,19 @@
+<section class="why-choose-us">
+  <div class="container">
+    <div class="section-header">
+      <h2 class="section-title">Why Choose Us</h2>
+      <p class="section-subtitle">Excellence in every detail, innovation in every solution</p>
+    </div>
+
+    <div class="features-grid">
+      <div *ngFor="let feature of features; let i = index"
+           class="feature-card"
+           [style.transition-delay]="(i * 0.1) + 's'">
+        <div class="feature-icon">{{ feature.icon }}</div>
+        <h3 class="feature-title">{{ feature.title }}</h3>
+        <p class="feature-description">{{ feature.description }}</p>
+        <div class="feature-glow"></div>
+      </div>
+    </div>
+  </div>
+</section>
